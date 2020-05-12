@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<body>
+<div th:fragment="leftMenu">
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+        <!-- Sidebar - Brand -->
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/dashboard/dashboard">
+            <div class="sidebar-brand-icon rotate-n-15">
+                <i class="fas fa-laugh-wink"></i>
+            </div>
+            <div class="sidebar-brand-text mx-3">NewNews Dashboard</div>
+        </a>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider my-0">
+
+        <!-- Nav Item - Dashboard -->
+        <li class="nav-item active">
+            <a class="nav-link" href="/dashboard/dashboard">
+                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <span>Dashboard</span></a>
+        </li>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider">
+
+        <!-- Heading -->
+        <div class="sidebar-heading">
+            ADD
+        </div>
+
+        <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item">
+            <a class="nav-link" href="/dashboard/add/news">
+                <i class="fas fa-fw fa-newspaper"></i>
+                <span>News</span>
+            </a>
+        </li>
+
+        <li class="nav-item" sec:authorize="hasAuthority('ADMIN')">
+            <a class="nav-link collapsed" href="/dashboard/add/user">
+                <i class="fas fa-fw fa-user"></i>
+                <span>User</span>
+            </a>
+        </li>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider">
+
+        <!-- Heading -->
+        <div class="sidebar-heading">
+            Edit
+        </div>
+
+        <!-- Nav Item - Edit News -->
+        <li class="nav-item">
+            <a class="nav-link" href="/dashboard/edit/newsTable">
+                <i class="fas fa-fw fa-newspaper"></i>
+                <span>News</span>
+            </a>
+        </li>
+
+        <!-- Nav Item - Edit User -->
+        <li class="nav-item" sec:authorize="hasAuthority('ADMIN')">
+            <a class="nav-link" href="/dashboard/edit/userTable">
+                <i class="fas fa-fw fa-user-edit"></i>
+                <span>User</span></a>
+        </li>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider d-none d-md-block">
+
+        <!-- Sidebar Toggler (Sidebar) -->
+        <div class="text-center d-none d-md-inline">
+            <button class="rounded-circle border-0" id="sidebarToggle"></button>
+        </div>
+
+    </ul>
+    <!-- End of Sidebar -->
+</div>
+</body>
+</html>
