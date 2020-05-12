@@ -3,7 +3,6 @@ package com.rusu.controller.DashBoard.EditController;
 import com.rusu.domain.News;
 import com.rusu.domain.User;
 import com.rusu.repos.NewsRepository;
-import com.rusu.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
