@@ -73,8 +73,8 @@
                                         <div class="col-sm-2">Image</div>
                                         <div class="col-sm-10">
                                             <div class="custom-file">
-                                                <input type="file" class="custom-file-input" th:id="customFile" th:field="*{image}">
-                                                <label class="custom-file-label" th:for="customFile" th:value="*{image}">Choose file</label>
+                                                <input type="file" class="custom-file-input" th:id="customFile" name="image" th:value="*{image}" th:field="*{image}">
+                                                <label class="custom-file-label" th:for="customFile">Choose file</label>
                                             </div>
                                         </div>
                                     </div>
@@ -114,18 +114,13 @@
 <script src="/dashboard/vendor/jquery/jquery.min.js"></script>
 <script src="/dashboard/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-<!-- Core plugin JavaScript-->
-<script src="/dashboard/vendor/jquery-easing/jquery.easing.min.js"></script>
-
-<!-- Custom scripts for all pages-->
-<script src="/dashboard/js/sb-admin-2.min.js"></script>
-
-<!-- Page level plugins -->
-<script src="/dashboard/vendor/chart.js/Chart.min.js"></script>
-
-<!-- Page level custom scripts -->
-<script src="/dashboard/js/demo/chart-area-demo.js"></script>
-<script src="/dashboard/js/demo/chart-pie-demo.js"></script>
+<script>
+// Add the following code if you want the name of the file appear on select
+$(".custom-file-input").on("change", function() {
+  var fileName = $(this).val().split("\\").pop();
+  $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+});
+</script>
 
 </body>
 

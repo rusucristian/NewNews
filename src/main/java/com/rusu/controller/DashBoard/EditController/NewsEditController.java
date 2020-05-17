@@ -62,12 +62,9 @@ public class NewsEditController {
 
         news.setAuthor(author);
 
-        if (image != null && !image.getOriginalFilename().isEmpty()){
-            File uploadDir = new File(uploadPath);
+        //de luat elementele news aparte si de lucfrat cu ele
 
-            if (!uploadDir.exists()){
-                uploadDir.mkdir();
-            }
+        if (image != null && !image.getOriginalFilename().isEmpty()){
 
             String uuidFile = UUID.randomUUID().toString();
             String resultFileName = uuidFile + "." + image.getOriginalFilename();
